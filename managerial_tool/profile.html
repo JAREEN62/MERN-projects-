@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Profile</title>
+    <meta name="description" content="Personal profile page for Oiver johnson — front-end developer." />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --bg:#0f1724;
+            --card:#0b1220;
+            --muted:#9aa4b2;
+            --accent:#6ee7b7;
+            --glass: rgba(255,255,255,0.03);
+            --radius:14px;
+            color-scheme: dark;
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        }
+        *{box-sizing:border-box}
+        html,body{height:100%}
+        body{
+            margin:0;
+            background:
+                radial-gradient(800px 400px at 10% 10%, rgba(110,231,183,0.06), transparent 10%),
+                radial-gradient(600px 300px at 90% 90%, rgba(99,102,241,0.04), transparent 6%),
+                var(--bg);
+            color:#e6eef6;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            padding:32px;
+        }
+
+        .container{
+            max-width:980px;
+            margin:0 auto;
+            display:grid;
+            grid-template-columns: 320px 1fr;
+            gap:24px;
+            align-items:start;
+        }
+
+        /* Sidebar */
+        .profile-card{
+            background:linear-gradient(180deg, rgba(255,255,255,0.02), var(--glass));
+            border-radius:var(--radius);
+            padding:24px;
+            position:relative;
+            overflow:hidden;
+            box-shadow: 0 6px 24px rgba(2,6,23,0.6);
+            border:1px solid rgba(255,255,255,0.03);
+        }
+        .avatar{
+            width:96px;height:96px;border-radius:18px;
+            display:inline-grid;place-items:center;
+            background:linear-gradient(135deg,#0ea5a4,#7c3aed);
+            margin-bottom:14px;
+            font-weight:700;font-size:28px;
+        }
+        .name{font-size:20px;font-weight:700;margin:0 0 4px}
+        .title{font-size:13px;color:var(--muted);margin:0 0 14px}
+        .bio{font-size:13px;color:var(--muted);line-height:1.35;margin-bottom:16px}
+        .meta{display:flex;flex-wrap:wrap;gap:8px}
+        .pill{
+            background:rgba(255,255,255,0.03);
+            padding:8px 10px;border-radius:999px;font-size:13px;color:var(--muted);
+            display:inline-flex;gap:8px;align-items:center;
+        }
+
+        /* Main content */
+        .panel{
+            background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+            border-radius:var(--radius);
+            padding:20px;
+            border:1px solid rgba(255,255,255,0.03);
+            box-shadow: 0 6px 24px rgba(2,6,23,0.45);
+        }
+        h2{margin:0 0 12px;font-size:16px}
+        .row{display:flex;gap:12px;align-items:center}
+        .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+        .skill{
+            background:rgba(255,255,255,0.02);
+            padding:10px;border-radius:12px;
+        }
+        .skill .label{font-size:13px;color:var(--muted);margin-bottom:6px}
+        .bar{height:8px;background:rgba(255,255,255,0.04);border-radius:999px;overflow:hidden}
+        .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#60a5fa);border-radius:999px}
+
+        .projects{display:grid;gap:12px}
+        .project{
+            display:flex;gap:12px;align-items:center;padding:10px;border-radius:10px;background:rgba(255,255,255,0.02);
+        }
+        .project .thumb{
+            width:52px;height:40px;border-radius:8px;background:linear-gradient(135deg,#60a5fa,#7c3aed);
+            flex:0 0 52px;
+        }
+        .project .meta{flex:1}
+        .project .meta .p-title{font-size:14px;margin:0}
+        .project .meta .p-desc{font-size:12px;color:var(--muted);margin:4px 0 0}
+
+        .socials{display:flex;gap:10px;margin-top:14px}
+        .socials a{color:var(--muted);text-decoration:none;font-size:13px;padding:8px;border-radius:8px;background:rgba(255,255,255,0.01)}
+        .cta{display:inline-flex;gap:8px;align-items:center;padding:10px 12px;border-radius:10px;background:#0ea5a4;color:#04201a;font-weight:600;text-decoration:none;border:none;cursor:pointer}
+
+        footer{margin-top:18px;font-size:12px;color:var(--muted);text-align:center}
+        @media (max-width:880px){
+            .container{grid-template-columns:1fr; padding:0 8px}
+            .profile-card{order:2}
+        }
+    </style>
+</head>
+<body>
+    <div class="container" role="main">
+        <aside class="profile-card" aria-label="Profile card">
+            <div class="avatar" aria-hidden="true">JD</div>
+            <h1 class="name">Oliver johnson</h1>
+            <div class="title">Front-end Developer • UI/UX Enthusiast</div>
+            <p class="bio">I build accessible, performant interfaces and component libraries. Focused on React, TypeScript, and modern CSS.</p>
+
+            <div class="meta" aria-hidden="false">
+                <div class="pill">📍 San Francisco</div>
+                <div class="pill">💼 Open to work</div>
+            </div>
+
+            <div class="socials" style="margin-top:16px">
+                <a href="#" title="GitHub">GitHub</a>
+                <a href="#" title="LinkedIn">LinkedIn</a>
+                <a href="#" title="Twitter">Twitter</a>
+            </div>
+
+            <div style="margin-top:16px;display:flex;gap:8px">
+                <button class="cta" id="emailBtn" title="Copy email">Copy Email</button>
+                <a class="cta" href="#" style="background:#60a5fa;color:#04201a">Download CV</a>
+            </div>
+
+            <footer>Available for freelance & full-time roles</footer>
+        </aside>
+
+        <section>
+            <div class="panel" style="margin-bottom:16px">
+                <h2>About</h2>
+                <p style="color:var(--muted);font-size:14px;margin-top:8px">Experienced front-end developer focused on building delightful user experiences. Passionate about design systems, performance, and progressive enhancement.</p>
+            </div>
+
+            <div class="panel" style="margin-bottom:16px">
+                <h2>Skills</h2>
+                <div class="skills" style="margin-top:12px">
+                    <div class="skill">
+                        <div class="label">React • TypeScript</div>
+                        <div class="bar" aria-hidden="true"><i style="width:88%"></i></div>
+                    </div>
+                    <div class="skill">
+                        <div class="label">HTML • CSS • Tailwind</div>
+                        <div class="bar" aria-hidden="true"><i style="width:92%"></i></div>
+                    </div>
+                    <div class="skill">
+                        <div class="label">Accessibility</div>
+                        <div class="bar" aria-hidden="true"><i style="width:78%"></i></div>
+                    </div>
+                    <div class="skill">
+                        <div class="label">Design Systems</div>
+                        <div class="bar" aria-hidden="true"><i style="width:70%"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h2>Projects</h2>
+                <div class="projects" style="margin-top:12px">
+                    <div class="project">
+                        <div class="thumb" aria-hidden="true"></div>
+                        <div class="meta">
+                            <p class="p-title">Component Library</p>
+                            <p class="p-desc">Built a reusable React component system with tokens, docs and automated testing.</p>
+                        </div>
+                        <div style="color:var(--muted);font-size:13px">2024</div>
+                    </div>
+
+                    <div class="project">
+                        <div class="thumb" aria-hidden="true" style="background:linear-gradient(135deg,#f97316,#f43f5e)"></div>
+                        <div class="meta">
+                            <p class="p-title">Marketing Site Redesign</p>
+                            <p class="p-desc">Led accessibility-first redesign improving performance and conversion.</p>
+                        </div>
+                        <div style="color:var(--muted);font-size:13px">2023</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Minimal interactivity: copy email to clipboard
+        (function(){
+            const email = "jane.doe@example.com";
+            document.getElementById('emailBtn').addEventListener('click', async function(){
+                try{
+                    await navigator.clipboard.writeText(email);
+                    this.textContent = "Copied!";
+                    setTimeout(()=> this.textContent = "Copy Email", 1600);
+                }catch(e){
+                    prompt("Email:", email);
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
