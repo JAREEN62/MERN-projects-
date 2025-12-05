@@ -1,0 +1,167 @@
+/*
+  QuickSlot - Custom Stylesheet
+  This file complements the Bootstrap framework to create the app's unique look and feel.
+*/
+
+:root {
+  --qs-primary: #0d6efd;
+  --qs-light-gray: #f8f9fa;
+  --qs-border-color: #dee2e6;
+  --qs-text-muted: #6c757d;
+  --qs-success: #198754;
+  --qs-danger: #dc3545;
+}
+
+body {
+  background-color: var(--qs-light-gray);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+/* --- Hero & Header --- */
+
+.qs-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem); /* Responsive font size */
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--qs-primary), #0dcaf0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.qs-subtitle {
+  font-size: 1.1rem;
+  color: var(--qs-text-muted);
+  max-width: 550px;
+}
+
+.qs-stat {
+  min-width: 100px;
+}
+
+.qs-stat .label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--qs-text-muted);
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.qs-stat .value {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.qs-stat .value-small {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--qs-primary);
+}
+
+.qs-panel {
+  background-color: #fff;
+  border-radius: 1rem; /* 16px */
+  border: 1px solid var(--qs-border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.qs-online-dot {
+  width: 12px;
+  height: 12px;
+  background-color: var(--qs-success);
+  border-radius: 50%;
+  position: relative;
+}
+
+/* Pulsing animation for the live dot */
+.qs-online-dot::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--qs-success);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* --- Slot & Booking Cards --- */
+
+.slot-card {
+  padding: 1rem;
+  border: 1px solid var(--qs-border-color);
+  border-radius: 0.5rem; /* 8px */
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.slot-card:hover {
+  border-color: var(--qs-primary);
+  background-color: #eef5ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.slot-card.disabled {
+  background-color: var(--qs-light-gray);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.slot-card.disabled:hover {
+  border-color: var(--qs-border-color);
+  transform: none;
+  box-shadow: none;
+}
+
+.booking-card {
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid var(--qs-border-color);
+  border-radius: 0.5rem; /* 8px */
+}
+
+/* --- General UI Enhancements --- */
+
+/* Consistent card styling */
+.card {
+  border: none;
+  border-radius: 1rem !important; /* Override Bootstrap if needed */
+  box-shadow: 0 6px 18px rgba(15, 23, 36, 0.06);
+}
+
+/* Style for the refresh button */
+#refreshBtn {
+  transition: transform 0.5s ease;
+}
+
+#refreshBtn:active {
+  transform: rotate(360deg);
+}
+
+/* Custom focus ring for better accessibility */
+.form-control:focus,
+.form-select:focus,
+.btn:focus {
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25) !important;
+}
