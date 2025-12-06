@@ -175,3 +175,53 @@ body {
 .modal-content {
   border-radius: 1rem;
 }
+
+/* --- Additions for Login Page --- */
+
+.login-body {
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+/* Ensure input groups look seamless */
+.input-group-text {
+  border-color: #dee2e6;
+}
+
+.input-group .form-control:focus {
+  border-color: #dee2e6;
+  box-shadow: none;
+  background-color: #fff;
+}
+
+.input-group:focus-within .input-group-text,
+.input-group:focus-within .form-control {
+  border-color: var(--primary-color);
+  background-color: #fff;
+}
+
+/* --- Footer Styles --- */
+
+.qs-footer {
+  background-color: #f8f9fa; /* Light gray background */
+  border-top: 1px solid #e9ecef;
+}
+
+.footer-link {
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: var(--primary-color) !important;
+  text-decoration: underline !important;
+}
+
+.social-link {
+  color: #6c757d;
+  font-size: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.social-link:hover {
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
