@@ -105,7 +105,7 @@ body {
 
 .gradient-text {
   background: linear-gradient(to right, #a5b4fc, #c7d2fe, #f5f3ff);
-  -webkit-background-clip: text;
+  /* -webkit-background-clip: text; */
   -webkit-text-fill-color: transparent;
 }
 .qs-subtitle {
